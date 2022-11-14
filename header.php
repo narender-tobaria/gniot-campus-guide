@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid d-flex justify-content-between">
+    <a class="navbar-brand" href="#">
+        <img class="nav-logo" src="assets/logo-gniot.jpg" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse flex-grow-0 menu-nav-items" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            College
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">GNIOT</a></li>
+            <li><a class="dropdown-item" href="#">GIMS</a></li>
+            <li><a class="dropdown-item" href="#">GIPS</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" data-bs-toggle="modal" href="#loginModalToggle" role="button">Login</a>
+          <!-- <a class="nav-link active" aria-current="page" href="#">Login</a> -->
+        </li>
+        <li class="nav-item">
+          <a class="nav-link special-nav-item" data-bs-toggle="modal" href="#signupModalToggle" role="button">Sign Up</a>
+          <!-- <a class="nav-link special-nav-item" href="#">Sign Up</a> -->
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- <header class="top-header">
+    <nav class="navbar">
+        <div class="site-logo"><img src="assets/logo-gniot.jpg" alt=""></div>
+        <div class="menu-items">
+            <li>Colleges</li>
+            <li>Login</li>
+            <li class="add-places-button">Sign Up</li>
+        </div>
+    </nav>
+</header> -->

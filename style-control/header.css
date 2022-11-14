@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: pink;
+}
+
+.top-header .navbar{
+    color: white;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    justify-content: space-between;
+    padding: 0px 10px 0px 10px;
+}
+
+.site-logo img{
+    height: 50px;
+    width: 150px;
+}
+
+.menu-items{
+    display: flex;
+    color: black;
+    align-items: center;
+}
+
+.menu-items li{
+    list-style-type: none;
+    margin: 0px 15px 0px 15px;
+}
+
+.add-places-button{
+    background-color: #782ED1;
+    padding: 8px 15px;
+    border-radius: 20px;
+    color: white;
+}
+

@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+$secondaryBackgroundColor : rgb(54, 76, 136);
+$textSecondaryColor : white;
+
+// Header Styling 
+
+.navbar{
+    .nav-logo{
+        height: 45px;
+    }
+    .menu-nav-items{
+        margin-right: 0.5rem;
+        
+        .nav-item{
+            margin-left: 0.5rem;
+        }
+
+        .special-nav-item{
+            background-color: $secondaryBackgroundColor;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            color: $textSecondaryColor;
+            margin-top: 3px !important;
+        }
+    }
+}
+
+// Middle Content
+.central-content{
+    flex: 1;
+    background-color: rgb(255, 255, 255);
+}
+
+// Popup Styling
+
+#loginModalToggle .modal-header, #signupModalToggle .modal-header, #forgotPasswordModalToggle .modal-header{
+    background-color: $secondaryBackgroundColor;
+    color: $textSecondaryColor;
+} 
+
+.popup-close-icon{
+    color: $textSecondaryColor;
+    text-decoration: none;
+}
+
+.popup-close-icon:hover{
+    color: $textSecondaryColor;
+    cursor: pointer;
+}

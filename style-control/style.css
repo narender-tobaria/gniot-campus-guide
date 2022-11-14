@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.navbar .nav-logo {
+  height: 45px;
+}
+.navbar .menu-nav-items {
+  margin-right: 0.5rem;
+}
+.navbar .menu-nav-items .nav-item {
+  margin-left: 0.5rem;
+}
+.navbar .menu-nav-items .special-nav-item {
+  background-color: rgb(54, 76, 136);
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  color: white;
+  margin-top: 3px !important;
+}
+
+.central-content {
+  flex: 1;
+  background-color: rgb(255, 255, 255);
+}
+
+#loginModalToggle .modal-header, #signupModalToggle .modal-header, #forgotPasswordModalToggle .modal-header {
+  background-color: rgb(54, 76, 136);
+  color: white;
+}
+
+.popup-close-icon {
+  color: white;
+  text-decoration: none;
+}
+
+.popup-close-icon:hover {
+  color: white;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */
