@@ -43,7 +43,87 @@ body {
   flex: 1;
   background-color: rgb(255, 255, 255);
 }
+.central-content .search-section {
+  background-color: #F1EFEF;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 2rem;
+  flex-wrap: wrap;
+}
+.central-content .search-section .search-box-area {
+  align-self: center;
+}
+.central-content .search-section .search-box-area .search-box-with-icon {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+}
+.central-content .search-section .search-box-area .search-box-with-icon .search-icon {
+  position: relative;
+  left: 3rem;
+}
+.central-content .search-section .search-box-area .search-box-with-icon .search-box-input {
+  height: 50px;
+  width: 300px;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 1rem;
+}
+.central-content .search-section .search-box-area .popular-location {
+  padding-left: 2rem;
+  font-size: 1.2rem;
+}
+.central-content .search-section h2 {
+  margin-left: 1.6rem;
+}
+.central-content .search-section .right-side-image img {
+  height: 350px;
+  width: 500px;
+}
 
+@media screen and (max-width: 865px) {
+  .central-content {
+    flex: 1;
+    height: 350px;
+  }
+  .central-content .search-section {
+    height: 350px;
+    background: url("../assets/couples.png");
+  }
+  .central-content .search-section .right-side-image {
+    display: none;
+  }
+}
+@media screen and (max-width: 360px) {
+  .central-content {
+    flex: 1;
+    height: 350px;
+  }
+  .central-content .search-section {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    overflow: scroll;
+  }
+  .central-content .search-section .search-box-area .search-box-with-icon {
+    margin: 1rem 0;
+  }
+  .central-content .search-section .search-box-area .search-box-with-icon .search-icon {
+    position: relative;
+    left: 2rem;
+  }
+  .central-content .search-section .search-box-area .search-box-with-icon .search-box-input {
+    height: 50px;
+    width: 240px;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 1rem;
+    padding-left: 1rem;
+  }
+  .central-content .search-section .search-box-area .popular-location {
+    padding-left: 2rem;
+    font-size: 1rem;
+  }
+}
 #loginModalToggle .modal-header, #signupModalToggle .modal-header, #forgotPasswordModalToggle .modal-header {
   background-color: rgb(54, 76, 136);
   color: white;

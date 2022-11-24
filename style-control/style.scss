@@ -53,6 +53,92 @@ $textSecondaryColor : white;
 .central-content{
     flex: 1;
     background-color: rgb(255, 255, 255);
+    .search-section{
+        background-color: #F1EFEF;
+        display: flex;
+        justify-content: space-between;
+        padding-left: 2rem;
+        flex-wrap: wrap;
+        .search-box-area{
+            align-self: center;
+            .search-box-with-icon{
+                display: flex;
+                align-items: center;
+                margin: 1rem 0;
+                .search-icon{
+                    position: relative;
+                    left: 3rem;
+                }
+                .search-box-input{
+                    height: 50px;
+                    width: 300px;
+                    border-radius: 30px;
+                    text-align: center;
+                    font-size: 1rem;
+                }
+            }
+            .popular-location{
+                padding-left: 2rem;
+                font-size: 1.2rem;
+            }
+        }
+        h2{
+            margin-left: 1.6rem;
+        }
+        .right-side-image{
+            img{
+                height: 350px;
+                width: 500px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 865px) {
+    .central-content{
+        flex: 1;
+        height: 350px;
+        .search-section{
+            height: 350px;
+            background: url("../assets/couples.png");
+            .right-side-image{
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .central-content{
+        flex: 1;
+        height: 350px;
+        .search-section{
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            overflow: scroll;
+            .search-box-area{
+                .search-box-with-icon{
+                    margin: 1rem 0;
+                    .search-icon{
+                        position: relative;
+                        left: 2rem;
+                    }
+                    .search-box-input{
+                        height: 50px;
+                        width: 240px;
+                        border-radius: 30px;
+                        text-align: center;
+                        font-size: 1rem;
+                        padding-left: 1rem;
+                    }
+                }
+                .popular-location{
+                    padding-left: 2rem;
+                    font-size: 1rem;
+                }
+            }
+        }    
+    }
 }
 
 // Popup Styling
