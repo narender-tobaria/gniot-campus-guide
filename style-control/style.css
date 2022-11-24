@@ -124,7 +124,7 @@ body {
     font-size: 1rem;
   }
 }
-#loginModalToggle .modal-header, #signupModalToggle .modal-header, #forgotPasswordModalToggle .modal-header {
+#loginModalToggle .modal-header, #signupModalToggle .modal-header, #forgotPasswordModalToggle .modal-header, #alertMessageBoxPopup .modal-header {
   background-color: rgb(54, 76, 136);
   color: white;
 }
@@ -136,6 +136,20 @@ body {
 
 .popup-close-icon:hover {
   color: white;
+  cursor: pointer;
+}
+
+.popup-alert-message-text {
+  display: none;
+  color: white;
+  padding: 0rem 1rem;
+  border-radius: 15px;
+}
+
+.password-show-hide-eye-icon {
+  position: absolute;
+  left: 90%;
+  margin-top: -30px;
   cursor: pointer;
 }
 

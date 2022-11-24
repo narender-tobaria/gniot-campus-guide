@@ -5,37 +5,35 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Login</h1>
-                    <a data-bs-dismiss="modal" class="material-symbols-outlined popup-close-icon">close</a>
-                    <!-- <button type="button" class="popup-close-button" data-bs-dismiss="modal" aria-label="Close"><span class="material-symbols-outlined popup-close-icon">close</span></button> -->
+                    <a data-bs-dismiss="modal" id="lg_popup_close_button" class="material-symbols-outlined popup-close-icon">close</a>
                 </div>
                 <div class="modal-body">
                     <div class="popup-alert-message d-flex justify-content-center">
-                        <p>Please enter a valid email</p>
+                        <p class="popup-alert-message-text" id="lg_alert_message">Please enter a valid email</p>
                     </div>
-                    <form>
+                    <form id="lg_popup_form">
                         <!-- Email input -->
                         <div class="form-outline mb-2">
-                            <label class="form-label" for="form2Example1">Email address</label>
-                            <input type="email" id="form2Example1" class="form-control" />
+                            <label class="form-label" for="lg_input_email">Email address</label>
+                            <input type="email" id="lg_input_email" class="form-control" />
                         </div>
 
                         <!-- Password input -->
                         <div class="form-outline mb-2">
-                            <label class="form-label" for="form2Example2">Password</label>
-                            <input type="password" id="form2Example2" class="form-control" />
+                            <label class="form-label" for="lg_input_pass">Password</label>
+                            <input type="password" id="lg_input_pass" class="form-control" />
                         </div>
 
                         <!-- Forgot Password -->
                         <div class="row mb-2">
                             <div class="col d-flex justify-content-center">
                             <a data-bs-toggle="modal" href="#forgotPasswordModalToggle" role="button">Forgot Password?</a>    
-                            <!-- <a href="#!">Forgot password?</a> -->
                             </div>
                         </div>
 
                         <!-- Login button -->
                         <div class="login-button d-flex justify-content-center">
-                            <button type="button" class="btn btn-primary btn-block mb-2">Login</button>
+                            <button type="button" id="lg_submit_button" class="btn btn-primary btn-block mb-2">Login</button>
                         </div>
                     
                         <!-- Sign Up Button -->
@@ -54,42 +52,43 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Sign Up</h1>
-                    <a data-bs-dismiss="modal" class="material-symbols-outlined popup-close-icon">close</a>
-                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                    <a data-bs-dismiss="modal" id="sp_popup_close_button" class="material-symbols-outlined popup-close-icon">close</a>
                 </div>
                 <div class="modal-body">
-                    <div class="popup-alert-message d-flex justify-content-center">
-                        <p>Please enter a valid email</p>
+                    <div class="d-flex justify-content-center">
+                        <p class="popup-alert-message-text" id="sp_alert_message">Please enter a valid email</p>
                     </div>
-                    <form>
+                    <form id="sp_popup_form">
                         <!-- Name input -->
                         <div class="form-outline mb-2">
-                            <label class="form-label" for="form2Example1">Name<span class="input-star">*</span></label>
-                            <input type="text" id="form2Example1" class="form-control" required />
+                            <label class="form-label" for="sp_input_name">Name<span class="input-star">*</span></label>
+                            <input type="text" id="sp_input_name" class="form-control" required />
                         </div>
 
                         <!-- Email input -->
                         <div class="form-outline mb-2">
-                            <label class="form-label" for="form2Example1">Email address<span class="input-star">*</span></label>
-                            <input type="email" id="form2Example1" class="form-control" required />
+                            <label class="form-label" for="sp_input_email">Email address<span class="input-star">*</span></label>
+                            <input type="email" id="sp_input_email" class="form-control" required />
                         </div>
 
                         <!-- Password input -->
                         <div class="form-outline mb-2">
-                            <label class="form-label" for="form2Example2">Password<span class="input-star">*</span></label>
-                            <input type="password" id="form2Example2" class="form-control" required />
+                            <label class="form-label" for="sp_input_pass">Password<span class="input-star">*</span></label>
+                            <input type="password" id="sp_input_pass" class="form-control" required />
+                            <span id="sp_pass_eye_icon" class="password-show-hide-eye-icon material-symbols-outlined" onclick="changePasswordVisibility(this.previousElementSibling.id,this.id)">visibility</span>
                         </div>
 
                          <!-- Confirm Password input -->
                          <div class="form-outline mb-2">
-                            <label class="form-label" for="form2Example2">Confirm Password<span class="input-star">*</span></label>
-                            <input type="password" id="form2Example2" class="form-control" required />
+                            <label class="form-label" for="sp_input_confirm_pass">Confirm Password<span class="input-star">*</span></label>
+                            <input type="password" id="sp_input_confirm_pass" class="form-control" required />
+                            <span id="sp_confirm_pass_eye_icon" class="password-show-hide-eye-icon material-symbols-outlined" onclick="changePasswordVisibility(this.previousElementSibling.id,this.id)">visibility</span>
                         </div>
 
                                                 <!-- User Type input -->
                         <div class="form-outline mb-2">
-                            <label class="form-label" for="form2Example1">I am a<span class="input-star">*</span></label>
-                            <select class="form-select" aria-label="Default select example" required>
+                            <label class="form-label" for="sp_input_user_type">I am a<span class="input-star">*</span></label>
+                            <select class="form-select" id="sp_input_user_type" aria-label="Default select example" required>
                                 <option selected value="Student">Student</option>
                                 <option value="Parent">Parent</option>
                                 <option value="Teacher">Teacher</option>
@@ -97,12 +96,12 @@
                             </select>
                         </div>
 
-                        <!-- Login button -->
+                        <!-- Sign Up button -->
                         <div class="login-button d-flex justify-content-center">
-                            <button type="submit" class="btn btn-primary btn-block mb-2">Sign Up</button>
+                            <button type="submit" id="sp_submit_button" class="btn btn-primary btn-block mb-2">Sign Up</button>
                         </div>
                     
-                        <!-- Sign Up Button -->
+                        <!-- Login Button -->
                         <div class="text-center">
                             <p>Already Have an Account? <a data-bs-toggle="modal" href="#loginModalToggle" role="button">Login</a></p>
                         </div>
@@ -120,7 +119,6 @@
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Reset Password</h1>
                     <a data-bs-dismiss="modal" class="material-symbols-outlined popup-close-icon">close</a>
-                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
                 </div>
                 <div class="modal-body">
                     <div class="popup-alert-message d-flex justify-content-center">
@@ -142,3 +140,20 @@
             </div>
         </div>
     </div>
+
+        <!-- Alert Message Popup -->
+    <div class="modal fade" id="alertMessageBoxPopup" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Reset Password</h1>
+                    <a data-bs-dismiss="modal" class="material-symbols-outlined popup-close-icon">close</a>
+                </div> -->
+                <div class="modal-body d-flex justify-content-center">
+                    <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_ya4ycrti.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+                </div>
+            </div>
+        </div>
+    </div>    
+
+    <a data-bs-toggle="modal" href="#alertMessageBoxPopup" role="button">Alert Popup</a>
