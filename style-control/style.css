@@ -12,6 +12,7 @@ body {
 
 .navbar .nav-logo {
   height: 45px;
+  border-radius: 10px;
 }
 .navbar .menu-nav-items {
   margin-right: 0.5rem;
@@ -27,6 +28,17 @@ body {
   margin-top: 3px !important;
 }
 
+@media screen and (max-width: 992px) {
+  .navbar .menu-nav-items {
+    width: 100%;
+    text-align: center;
+  }
+  .navbar #menu-items-ul {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+}
 .central-content {
   flex: 1;
   background-color: rgb(255, 255, 255);
@@ -45,4 +57,29 @@ body {
 .popup-close-icon:hover {
   color: white;
   cursor: pointer;
+}
+
+.site-footer {
+  background-color: white;
+}
+.site-footer .first-column .footer-logo {
+  height: 50px;
+  width: 150px;
+  border-radius: 10px;
+}
+.site-footer .second-column .footer-pages a {
+  text-decoration: none;
+  margin: 3px;
+  color: black;
+}
+.site-footer .third-column .footer-contact-details p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.site-footer .third-column .social-icons i {
+  margin: 5px;
+}
+.site-footer .copyright-content {
+  text-align: center;
+  margin: 0.5rem 0;
 }/*# sourceMappingURL=style.css.map */

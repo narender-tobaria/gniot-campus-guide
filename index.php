@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="style-control/index.css">
+    <!-- <link rel="stylesheet" href="style-control/index.css"> -->
     <link rel="stylesheet" href="style-control/style.css">
     <title>GNIOT Campus Guide</title>
 </head>
@@ -16,7 +16,7 @@
     <?php include 'header.php' ?>
 
     <div class="central-content">
-        <div class="search-section">
+        <!-- <div class="search-section">
             <div class="search-box-area">
                 <h2>Let's Explore GNIOT</h2>
                 <div class="search-box-with-icon">
@@ -30,7 +30,7 @@
             <div class="right-side-image">
                 <img src="assets/couples.png" alt="">
             </div>
-        </div>
+        </div> -->
     </div>
 
     <?php include 'popups.php' ?>
