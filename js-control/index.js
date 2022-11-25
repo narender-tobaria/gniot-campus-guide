@@ -30,3 +30,13 @@ function changePasswordVisibility(inputBoxId,eyeIconId){
         passBox.type = "password";
     }
 }
+
+function nameFormat(name) {    // aman   kumar  >>>> Aman Kumar
+    let formatedName = "";
+    const words = name.split(" ");
+    for (let i = 0; i < words.length; i++) {
+        words[i] = words[i][0].toUpperCase() + words[i].substr(1);
+        formatedName += words[i] + " ";
+    }
+    return formatedName;
+}

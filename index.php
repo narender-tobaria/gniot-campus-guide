@@ -14,6 +14,15 @@
     <script src="js-control/login.js" async defer></script>
     <script src="js-control/sign-up.js" async defer></script>
     <script src="js-control/reset-password.js" async defer></script>
+    <script type="text/javascript">
+        function preventBack(){
+            window.history.forward();
+        }  
+        setTimeout(() => {
+            preventBack()
+        }, 0);
+        window.onunload = function(){null};
+    </script>
     <title>GNIOT Campus Guide</title>
 </head>
 <body>

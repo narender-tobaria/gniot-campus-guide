@@ -28,7 +28,7 @@ sp_email.addEventListener("keyup",(event)=>{
 
 sp_button.addEventListener("click",(event)=> {
     event.preventDefault();
-    let spName = sp_name.value.replace(/\s+/g, ' ').trim()
+    let spName = nameFormat(sp_name.value.replace(/\s+/g, ' ').trim());
     let spEmail = sp_email.value;
     let spPass1 = sp_pass1.value;
     let spPass2 = sp_pass2.value;
