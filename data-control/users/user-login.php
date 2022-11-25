@@ -1,6 +1,6 @@
 <?php
 require "../config.php";
-// error_reporting(0);
+error_reporting(0);
 session_start();
 
 $input = file_get_contents('php://input');
