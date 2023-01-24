@@ -7,19 +7,19 @@
     <div class="carousel-inner">
         <div class="carousel-item active">
             <img src="assets/college/gniot/gniot.jpeg" style="height: 70vh" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
+            <div class="carousel-caption d-md-block">
                 <a type="button" class="btn btn-primary" href="login.php" role="button">Get Information</a>
             </div>
         </div> 
         <div class="carousel-item">
             <img src="assets/college/gips/gips.jpg" style="height: 70vh" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
+            <div class="carousel-caption d-md-block">
                 <a type="button" class="btn btn-primary" href="login.php" role="button">Get Information</a>
             </div>
         </div>
         <div class="carousel-item">
             <img src="assets/college/gims/gims.jpg" style="height: 70vh" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
+            <div class="carousel-caption d-md-block">
                 <a type="button" class="btn btn-primary" href="login.php" role="button">Get Information</a>
             </div>
         </div>

@@ -54,19 +54,19 @@ if(!isset($_SESSION['user_id'])){
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="../assets/college/gniot/gniot.jpeg" style="height: 70vh" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
+                    <div class="carousel-caption d-md-block">
                         <button type="button" onclick="showHideCollgeCourses('gniot')" class="btn btn-primary">Get Information</button>
                     </div>
                 </div> 
                 <div class="carousel-item">
                     <img src="../assets/college/gips/gips.jpg" style="height: 70vh" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
+                    <div class="carousel-caption d-md-block">
                         <button type="button" onclick="showHideCollgeCourses('gips')" class="btn btn-primary">Get Information</button>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="../assets/college/gims/gims.jpg" style="height: 70vh" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
+                    <div class="carousel-caption d-md-block">
                         <button type="button" onclick="showHideCollgeCourses('gims')" class="btn btn-primary">Get Information</button>
                     </div>
                 </div>
