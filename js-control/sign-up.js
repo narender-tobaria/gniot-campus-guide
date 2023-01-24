@@ -1,6 +1,9 @@
 
+
 // Sign Up Form Control 
 const create_new_user_account_url = "data-control/users/user-sign-up.php";
+
+const success_gif_button = document.getElementById("success-gif-popup");
 
 const sp_alert = document.getElementById("sp_alert_message");
 const sp_name = document.getElementById("sp_input_name");
@@ -28,7 +31,7 @@ sp_email.addEventListener("keyup",(event)=>{
 
 sp_button.addEventListener("click",(event)=> {
     event.preventDefault();
-    let spName = nameFormat(sp_name.value.replace(/\s+/g, ' ').trim());
+    let spName = sp_name.value;
     let spEmail = sp_email.value;
     let spPass1 = sp_pass1.value;
     let spPass2 = sp_pass2.value;
@@ -36,8 +39,8 @@ sp_button.addEventListener("click",(event)=> {
     let spQuestion = sp_user_question.value;
     let spAnswer = sp_answer.value;
     if(spName != ""){
-        sp_name.value = spName;
-        if(spEmail != "" && validateEmail(spEmail) === true){
+        sp_name.value = nameFormat(sp_name.value.replace(/\s+/g, ' ').trim());
+        if(spEmail != "" && validateEmail(spEmail)){
             if(spPass1 != ""){
                 if(spPass2 != ""){
                     if(spAnswer != ""){
@@ -89,14 +92,61 @@ function sendDataToDatabaseForSignUp(userName,userEmail,userPass,userType,userQu
                 showAlertMessage(sp_alert,"Email Already Registered",false);
             }
             else if (result.insert == 'new-account-created') {
-                showAlertMessage(sp_alert,"Account Created Successfully",true);
+                // showAlertMessage(sp_alert,"Account Created Successfully",true);
                 setTimeout(()=>{
-                    window.location.href = window.location.href + "user-panel/";
-                },3000)
+                    window.location.href = window.location.href.replace("sign-up.php","user-panel/");
+                },2200)
                 sp_form.reset();
+                success_gif_button.click();
             }
             else {
                 showAlertMessage(sp_alert,"Error : Account Not Created",false);
             }
         }).catch(error => console.log(error));
+}
+
+
+function nameFormat(name) {    // aman   kumar  >>>> Aman Kumar
+    let formatedName = "";
+    const words = name.split(" ");
+    for (let i = 0; i < words.length; i++) {
+        words[i] = words[i][0].toUpperCase() + words[i].substr(1);
+        formatedName += words[i] + " ";
+    }
+    return formatedName;
+}
+
+
+function showAlertMessage(alertBox,alertMessage,visibility){
+    if(visibility){
+        alertBox.style.backgroundColor = "green";
+    }
+    else{
+        alertBox.style.backgroundColor = "red";
+    }
+    alertBox.innerText = alertMessage;
+    alertBox.style.display = "block";
+    setTimeout(()=>{
+        alertBox.innerText = "";
+        alertBox.style.display = "none";
+    }, 3000)
+}
+
+function validateEmail(email) {
+    let res = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    return res.test(email);
+}
+
+
+function changePasswordVisibility(inputBoxId,eyeIconId){
+    const passBox = document.getElementById(inputBoxId);
+    const eyeIcon = document.getElementById(eyeIconId);
+    if(eyeIcon.innerText === "visibility"){
+        eyeIcon.innerText = "visibility_off";
+        passBox.type = "text";
+    }
+    else{
+        eyeIcon.innerText = "visibility";
+        passBox.type = "password";
+    }
 }

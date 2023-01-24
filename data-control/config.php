@@ -1,7 +1,12 @@
 <?php
+// $username = "posccplm_gcd_user";
+// $password = "Poscal@gcd";
+// $dbname = "posccplm_gcd";
+// $host = "localhost";
+
 $username = "root";
 $password = "";
-$dbname = "gcg_db";
+$dbname = "gcd";
 $host = "localhost";
 
 $connect = mysqli_connect($host,$username,$password,$dbname);

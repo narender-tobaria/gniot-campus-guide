@@ -1,6 +1,9 @@
 
 // Forgot password form control
+const user_account_login_url = "data-control/users/user-login.php";
 const reset_password_url = "data-control/users/user-reset-password.php";
+
+const success_gif_button = document.getElementById("success-gif-popup");
 
 const rp_alert = document.getElementById("rp_alert_message");
 const rp_email_div = document.getElementById("rp_input_email_div");
@@ -123,18 +126,79 @@ function resetPassword(answer,email,password){
             'password' : password
         }),
         headers: {
-            'Content-type': 'application/json'
+            'Content-type': 'application/json' 
         }
     }).then(response => response.json())
-        .then((result) => {
+        .then((result) => { 
             if (result.reset == 'password-changed') {
-                showAlertMessage(rp_alert,"Password Changed Successfully",true);
                 setTimeout(()=>{
-                    window.location.reload();
-                },3000)
+                    loginUser(email,password);
+                },2200)
+                success_gif_button.click();
             }
             else {
                 showAlertMessage(rp_alert,"Try Again Password Not Changed",false);
             }
         }).catch(error => console.log(error));
+}
+
+function loginUser(email,password){
+    fetch(user_account_login_url, {
+        method: 'POST',
+        body: JSON.stringify({
+            'email' : email,
+            'password' : password
+        }),
+        headers: {
+            'Content-type': 'application/json'
+        }
+    }).then(response => response.json())
+        .then((result) => {
+            if (result.login == 'admin-login') {
+                window.location.href = window.location.href + "admin-panel/";
+            }
+            else if (result.login == 'user-login') {
+                setTimeout(()=>{
+                    window.location.href = window.location.href.replace("reset-password.php","user-panel/");
+                },1500)
+                // success_gif_button.click();
+            }
+            else{
+                showAlertMessage(lg_alert,"No Records Found",false);
+            }
+        }).catch(error => console.log(error));
+}
+
+
+function showAlertMessage(alertBox,alertMessage,visibility){
+    if(visibility){
+        alertBox.style.backgroundColor = "green";
+    }
+    else{
+        alertBox.style.backgroundColor = "red";
+    }
+    alertBox.innerText = alertMessage;
+    alertBox.style.display = "block";
+    setTimeout(()=>{
+        alertBox.innerText = "";
+        alertBox.style.display = "none";
+    }, 3000)
+}
+
+function validateEmail(email) {
+    let res = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    return res.test(email);
+}
+
+function changePasswordVisibility(inputBoxId,eyeIconId){
+    const passBox = document.getElementById(inputBoxId);
+    const eyeIcon = document.getElementById(eyeIconId);
+    if(eyeIcon.innerText === "visibility"){
+        eyeIcon.innerText = "visibility_off";
+        passBox.type = "text";
+    }
+    else{
+        eyeIcon.innerText = "visibility";
+        passBox.type = "password";
+    }
 }
