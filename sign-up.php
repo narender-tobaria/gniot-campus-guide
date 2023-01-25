@@ -41,6 +41,12 @@
                             <input type="email" id="sp_input_email" class="form-control" required />
                         </div>
 
+                         <!-- Mobile input -->
+                         <div class="form-outline mb-2">
+                            <label class="form-label" for="sp_input_mobile">Mobile Number<span class="input-star">*</span></label>
+                            <input type="number" id="sp_input_mobile" class="form-control" required />
+                        </div>
+
                         <!-- Password input -->
                         <div class="form-outline mb-2">
                             <label class="form-label" for="sp_input_pass">Password<span class="input-star">*</span></label>

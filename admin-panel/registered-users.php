@@ -40,6 +40,7 @@ $result = $connect->query($sql);
                     <th scope="col">Sr.</th>
                     <th scope="col">Name</th>
                     <th scope="col">Email</th>
+                    <th scope="col">Mobile</th>
                     <th scope="col">User Type</th>
                     <th scope="col">Reg. Time</th>
                 </tr>
@@ -54,6 +55,7 @@ $result = $connect->query($sql);
                                 <th scope="row"><?php echo $sr; ?></th>
                                 <td><?php echo $row['name']; ?></td>
                                 <td><?php echo $row['email']; ?></td>
+                                <td><?php echo $row['mobile']; ?></td>
                                 <td><?php echo $row['user_type']; ?></td>
                                 <td><?php echo $row['reg_time']; ?></td>
                             </tr>

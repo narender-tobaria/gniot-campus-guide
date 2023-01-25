@@ -8,6 +8,7 @@ $decode = json_decode($input, true);
 
 $user_name = $decode['name'];
 $user_email = $decode['email'];
+$user_mobile = $decode['mobile'];
 $user_pass = $decode['password'];
 $user_type = $decode['usertype'];
 $user_ques = $decode['question'];
@@ -23,8 +24,8 @@ if($user_email != ""){
         echo json_encode(array('insert' => 'email-already-present'));
     }
     else{
-        $newUserSignUp = mysqli_query($connect,"INSERT INTO `users`(`name`,`email`,`password`,`user_type`,`security_ques`,`security_ans`,`reg_time`) 
-        VALUES ('$user_name','$user_email','$passwordHash','$user_type','$user_ques','$user_ans','$currentTime')");
+        $newUserSignUp = mysqli_query($connect,"INSERT INTO `users`(`name`,`email`,`mobile`,`password`,`user_type`,`security_ques`,`security_ans`,`reg_time`) 
+        VALUES ('$user_name','$user_email','$user_mobile','$passwordHash','$user_type','$user_ques','$user_ans','$currentTime')");
         if($newUserSignUp){
             $checkUserPresence = mysqli_query($connect, "SELECT * FROM `users` WHERE email='$user_email'");
             if(mysqli_num_rows($checkUserPresence) > 0){

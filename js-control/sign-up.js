@@ -6,6 +6,7 @@ const create_new_user_account_url = "data-control/users/user-sign-up.php";
 const sp_alert = document.getElementById("sp_alert_message");
 const sp_name = document.getElementById("sp_input_name");
 const sp_email = document.getElementById("sp_input_email");
+const sp_mobile = document.getElementById("sp_input_mobile");
 const sp_pass1 = document.getElementById("sp_input_pass");
 const sp_pass2 = document.getElementById("sp_input_confirm_pass");
 const sp_user_type = document.getElementById("sp_input_user_type");
@@ -31,6 +32,7 @@ sp_button.addEventListener("click",(event)=> {
     event.preventDefault();
     let spName = sp_name.value;
     let spEmail = sp_email.value;
+    let spMobile = sp_mobile.value;
     let spPass1 = sp_pass1.value;
     let spPass2 = sp_pass2.value;
     let spUserType = sp_user_type.value;
@@ -39,26 +41,33 @@ sp_button.addEventListener("click",(event)=> {
     if(spName != ""){
         sp_name.value = nameFormat(sp_name.value.replace(/\s+/g, ' ').trim());
         if(spEmail != "" && validateEmail(spEmail)){
-            if(spPass1 != ""){
-                if(spPass2 != ""){
-                    if(spAnswer != ""){
-                        if(spPass1.localeCompare(spPass2) === 0){
-                            sendDataToDatabaseForSignUp(spName,spEmail,spPass1,spUserType,spQuestion,spAnswer);
+            if(spMobile != "" && isMobileValid(spMobile)){
+                if(spPass1 != ""){
+                    if(spPass2 != ""){
+                        if(spAnswer != ""){
+                            if(spPass1.localeCompare(spPass2) === 0){
+                                spName = nameFormat(sp_name.value.replace(/\s+/g, ' ').trim());
+                                sendDataToDatabaseForSignUp(spName,spEmail,spMobile,spPass1,spUserType,spQuestion,spAnswer);
+                            }
+                            else{
+                                showAlertMessage(sp_alert,"Password Doesn't Matched",false);
+                            }
                         }
                         else{
-                            showAlertMessage(sp_alert,"Password Doesn't Matched",false);
+                            showAlertMessage(sp_alert,"Answer Your Security Question",false);
                         }
                     }
                     else{
-                        showAlertMessage(sp_alert,"Answer Your Security Question",false);
+                        showAlertMessage(sp_alert,"Please Confirm Password",false);
                     }
                 }
                 else{
-                    showAlertMessage(sp_alert,"Please Confirm Password",false);
+                    showAlertMessage(sp_alert,"Enter New Password",false);
                 }
             }
             else{
-                showAlertMessage(sp_alert,"Enter New Password",false);
+                showAlertMessage(sp_alert,"Enter a valid Mobile",false);
+                sp_mobile.value = "";
             }
         }
         else{
@@ -70,12 +79,13 @@ sp_button.addEventListener("click",(event)=> {
     }
 })
 
-function sendDataToDatabaseForSignUp(userName,userEmail,userPass,userType,userQuestion,userAnswer){
+function sendDataToDatabaseForSignUp(userName,userEmail,userMobile,userPass,userType,userQuestion,userAnswer){
     fetch(create_new_user_account_url, {
         method: 'POST',
         body: JSON.stringify({
             'name' : userName,
             'email' : userEmail,
+            'mobile' : userMobile,
             'password' : userPass,
             'usertype' : userType,
             'question' : userQuestion,
@@ -143,4 +153,26 @@ function changePasswordVisibility(inputBoxId,eyeIconId){
         eyeIcon.innerText = "visibility";
         passBox.type = "password";
     }
+}
+
+function isMobileValid(number){
+    var mobile= number;
+    if(mobile.length!=10){
+        return false;
+
+    }
+    let intRegex = /[0-9 -()+]+$/;
+    let is_mobile=true;
+    for ( var i=0; i < 10; i++) {
+        if(intRegex.test(mobile[i]))
+             { 
+             continue;
+             }
+            else{
+                is_mobile=false;
+                break;
+            }
+         }
+    return is_mobile;
+
 }
