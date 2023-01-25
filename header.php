@@ -22,14 +22,6 @@
         <li class="nav-item">
           <a class="nav-link special-nav-item" href="sign-up.php">Sign Up</a>
         </li>
-
-
-        <!-- <li class="nav-item">
-          <a class="nav-link active" data-bs-toggle="modal" href="#loginModalToggle" id="login-popup-button" role="button">Login</a>
-        </li> -->
-        <!-- <li class="nav-item">
-          <a class="nav-link special-nav-item" data-bs-toggle="modal" href="#signupModalToggle" role="button">Sign Up</a>
-        </li> -->
       </ul>
     </div>
   </div>

@@ -2,7 +2,6 @@
   <div class="container-fluid d-flex justify-content-between">
     <a class="navbar-brand" href="#">
       <i class="bi bi-person-circle"></i>
-        <!-- <img class="nav-logo" src="../assets/logo-gniot.jpg" alt=""> -->
         <span class="ms-2"> Hi! <?php echo $_SESSION['user_name']; ?></span>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,9 +20,9 @@
             <li><a class="dropdown-item" href="gips-map.php" role="button">GIPS</a></li>
           </ul>
         </li>
-        <!-- <li class="nav-item">
+        <li class="nav-item">
           <a class="nav-link"  href="registered-users.php" role="button">All Users</a>
-        </li> -->
+        </li>
         <li class="nav-item">
           <a class="nav-link special-nav-item" href="../data-control/users/user-logout.php" role="button">Logout</a>
         </li>

@@ -2,18 +2,12 @@
 // Login Form Control
 const user_account_login_url = "data-control/users/user-login.php";
 
-const success_gif_button = document.getElementById("success-gif-popup");
-
 const lg_alert = document.getElementById("lg_alert_message");
 const lg_email = document.getElementById("lg_input_email");
 const lg_pass = document.getElementById("lg_input_pass");
 const lg_form = document.getElementById("lg_popup_form");
 const lg_button = document.getElementById("lg_submit_button");
 const lg_popup_close_button = document.getElementById("lg_popup_close_button");
-
-lg_email.addEventListener("keyup",(event)=>{
-    lg_email.value = lg_email.value.replace(/[`~!#$%^&*()|+\=?;:'",<>\{\}\[\]\\\/]/gi, '');
-})
 
 lg_button.addEventListener("click",(event) => {
     event.preventDefault();
@@ -36,7 +30,6 @@ lg_button.addEventListener("click",(event) => {
                         window.location.href = window.location.href.replace("login.php","admin-panel/");
                     }
                     else if (result.login == 'user-login') {
-                        success_gif_button.click();
                         window.location.href = window.location.href.replace("login.php","user-panel/");
                     }
                     else if (result.login == 'incorrect-password') {

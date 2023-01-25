@@ -3,8 +3,6 @@
 // Sign Up Form Control 
 const create_new_user_account_url = "data-control/users/user-sign-up.php";
 
-const success_gif_button = document.getElementById("success-gif-popup");
-
 const sp_alert = document.getElementById("sp_alert_message");
 const sp_name = document.getElementById("sp_input_name");
 const sp_email = document.getElementById("sp_input_email");
@@ -93,7 +91,6 @@ function sendDataToDatabaseForSignUp(userName,userEmail,userPass,userType,userQu
             }
             else if (result.insert == 'new-account-created') {
                 sp_form.reset();
-                success_gif_button.click();
                 window.location.href = window.location.href.replace("sign-up.php","user-panel/");
             }
             else {

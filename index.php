@@ -10,10 +10,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="style-control/style.css">
-    <!-- <script src="js-control/index.js" async defer></script>
-    <script src="js-control/login.js" async defer></script>
-    <script src="js-control/sign-up.js" async defer></script>
-    <script src="js-control/reset-password.js" async defer></script> -->
     <script type="text/javascript">
         function preventBack(){
             window.history.forward();

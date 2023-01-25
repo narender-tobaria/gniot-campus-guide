@@ -3,8 +3,6 @@
 const user_account_login_url = "data-control/users/user-login.php";
 const reset_password_url = "data-control/users/user-reset-password.php";
 
-const success_gif_button = document.getElementById("success-gif-popup");
-
 const rp_alert = document.getElementById("rp_alert_message");
 const rp_email_div = document.getElementById("rp_input_email_div");
 const rp_email = document.getElementById("rp_input_email");
@@ -131,7 +129,6 @@ function resetPassword(answer,email,password){
     }).then(response => response.json())
         .then((result) => { 
             if (result.reset == 'password-changed') {
-                success_gif_button.click();
                 loginUser(email,password);
             }
             else {
