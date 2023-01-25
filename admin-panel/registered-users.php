@@ -64,6 +64,7 @@ $result = $connect->query($sql);
                     else{
                         echo "no records found";
                     }
+                    $connect->close();
                 ?>
             </tbody>
         </table>
