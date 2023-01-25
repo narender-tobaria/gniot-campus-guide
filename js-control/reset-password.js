@@ -131,10 +131,8 @@ function resetPassword(answer,email,password){
     }).then(response => response.json())
         .then((result) => { 
             if (result.reset == 'password-changed') {
-                setTimeout(()=>{
-                    loginUser(email,password);
-                },2200)
                 success_gif_button.click();
+                loginUser(email,password);
             }
             else {
                 showAlertMessage(rp_alert,"Try Again Password Not Changed",false);
@@ -155,13 +153,10 @@ function loginUser(email,password){
     }).then(response => response.json())
         .then((result) => {
             if (result.login == 'admin-login') {
-                window.location.href = window.location.href + "admin-panel/";
+                window.location.href = window.location.href.replace("reset-password.php","admin-panel/");
             }
             else if (result.login == 'user-login') {
-                setTimeout(()=>{
-                    window.location.href = window.location.href.replace("reset-password.php","user-panel/");
-                },1500)
-                // success_gif_button.click();
+                window.location.href = window.location.href.replace("reset-password.php","user-panel/");
             }
             else{
                 showAlertMessage(lg_alert,"No Records Found",false);

@@ -92,12 +92,9 @@ function sendDataToDatabaseForSignUp(userName,userEmail,userPass,userType,userQu
                 showAlertMessage(sp_alert,"Email Already Registered",false);
             }
             else if (result.insert == 'new-account-created') {
-                // showAlertMessage(sp_alert,"Account Created Successfully",true);
-                setTimeout(()=>{
-                    window.location.href = window.location.href.replace("sign-up.php","user-panel/");
-                },2200)
                 sp_form.reset();
                 success_gif_button.click();
+                window.location.href = window.location.href.replace("sign-up.php","user-panel/");
             }
             else {
                 showAlertMessage(sp_alert,"Error : Account Not Created",false);

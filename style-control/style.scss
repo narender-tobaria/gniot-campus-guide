@@ -214,3 +214,101 @@ $textSecondaryColor : white;
 }
 
 
+.location-icon{
+    font-size: 2rem;
+    color: red;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1280px) {
+    .location-icon{
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .location-icon{
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .location-icon{
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .location-icon{
+        font-size: 0.7rem;
+    }
+}
+
+// campus map icons location 
+
+.loc-icon-gips{
+    top: 30%;
+    left: 55%;
+}
+
+.loc-icon-canteen{
+    top: 29%;
+    left: 7%;
+}
+
+.loc-icon-gims{
+    top: 40%;
+    left: 12%;
+}
+
+.loc-icon-gniot{
+    top: 49%;
+    left: 47%;
+}
+
+.loc-icon-library{
+    top: 48%;
+    left: 54%;
+}
+
+.loc-icon-boys-hostel{
+    top: 65%;
+    left: 14%;
+}
+
+
+// gniot map location icons 
+
+.loc-icon-gniot-btech{
+    top: 13%;
+    left: 28%;
+}
+
+.loc-icon-gniot-mba{
+    top: 36%;
+    left: 24.5%;
+}
+.loc-icon-gniot-library{
+    top: 36%;
+    left: 52%;
+}
+.loc-icon-gniot-placement{
+    top: 60%;
+    right: 5%;
+}
+
+// gims map location icons
+
+.loc-icon-gims-mca{
+    top: 21%;
+    left: 52%;
+}
+
+// gips map location icons
+
+.loc-icon-gips-bca{
+    top: 22%;
+    left: 55%;
+}
+
+

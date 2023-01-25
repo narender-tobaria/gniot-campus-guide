@@ -33,13 +33,11 @@ lg_button.addEventListener("click",(event) => {
             }).then(response => response.json())
                 .then((result) => {
                     if (result.login == 'admin-login') {
-                        window.location.href = window.location.href + "admin-panel/";
+                        window.location.href = window.location.href.replace("login.php","admin-panel/");
                     }
                     else if (result.login == 'user-login') {
-                        setTimeout(()=>{
-                            window.location.href = window.location.href.replace("login.php","user-panel/");
-                        },2200)
                         success_gif_button.click();
+                        window.location.href = window.location.href.replace("login.php","user-panel/");
                     }
                     else if (result.login == 'incorrect-password') {
                         showAlertMessage(lg_alert,"Entered Wrong Password",false);
